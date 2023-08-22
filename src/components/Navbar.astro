@@ -15,24 +15,9 @@ const links = [
 ]
 ---
 
-<ul>
+<div class="nav-links">
   {links.map(link => 
-    <li>
       <a href={link.path}>{link.pageName}</a>
-    </li>)}
-</ul>
+    )}
+</div>
 
-<style>
-  ul {
-    list-style: none;
-  }
-
-  ul > li > a{
-    text-decoration: none;
-    color: #1e1e1e;
-    font-weight: bold;
-  }
-  ul> li > a:hover {
-    color: cornflowerblue;
-  }
-</style>
