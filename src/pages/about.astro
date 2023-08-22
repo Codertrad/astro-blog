@@ -1,45 +1,78 @@
 ---
+import '../styles/global.css'
 import Layout from '../layouts/Layout.astro'
+
 const pageTitle = 'Sobre mi'
 
 const identity = {
-  firstName: 'Sarah',
-  country: 'Canada',
-  occupation: 'Escritor tecnico',
-  hobbies: ['Fotografia', 'Observacion de aves', 'Peñarol']
+	firstName: 'Sarah',
+	country: 'Canada',
+	occupation: 'Escritor tecnico',
+	hobbies: ['Fotografia', 'Observacion de aves', 'Peñarol']
 }
 
-const skills = ['HTML', 'CSS', 'JavaScript', 'React','Astro', 'Redaccion de documentos']
+const skills = [
+	'HTML',
+	'CSS',
+	'JavaScript',
+	'React',
+	'Astro',
+	'Redaccion de documentos'
+]
 
 const happy = true
 const finished = false
 const goal = 3
+
+const skillColor = 'navy'
+const fontWeight = 'bold'
+const textCase = 'uppercase'
 ---
 
 <Layout title={pageTitle}>
-  <h1>{pageTitle}</h1>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat nesciunt labore ipsum! Laudantium nesciunt ad quam accusamus fugit neque qui?</p>
+	<h1>{pageTitle}</h1>
+	<p>
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat nesciunt
+		labore ipsum! Laudantium nesciunt ad quam accusamus fugit neque qui?
+	</p>
 
-  <p>He aqui algunos datos sobre mi:</p>
-  <ul>
-    <li>Me llamo {identity.firstName}</li>
-    <li>Vivo en {identity.country} y trabajo como {identity.occupation}.</li>
-    {
-      identity.hobbies.length >= 2 && 
-        <li>Dos de mis aficiones son: {identity.hobbies[0]} y {identity.hobbies[1]}</li>
-    }
-  </ul>
-  <p>Mis habilidades son:</p>
-  <ul>
-    {skills.map(skill => <li>{skill}</li>)}
-  </ul>
+	<p>He aqui algunos datos sobre mi:</p>
+	<ul>
+		<li>Me llamo {identity.firstName}</li>
+		<li>Vivo en {identity.country} y trabajo como {identity.occupation}.</li>
+		{
+			identity.hobbies.length >= 2 && (
+				<li>
+					Dos de mis aficiones son: {identity.hobbies[0]} y{' '}
+					{identity.hobbies[1]}
+				</li>
+			)
+		}
+	</ul>
+	<p>Mis habilidades son:</p>
+	<ul>
+		{skills.map(skill => <li class='skill'>{skill}</li>)}
+	</ul>
 
-  {happy && <p>¡Estoy feliz de aprender Astro!</p>}
-  {finished && <p>¡He terminado este tutorial!</p>}
-  {goal === 3 ? <p>Mi objetivo es terminar en 3 dias</p> : <p>Mi objetivo no son 3 dias</p>}
+	{happy && <p>¡Estoy feliz de aprender Astro!</p>}
+	{finished && <p>¡He terminado este tutorial!</p>}
+	{
+		goal === 3 ? (
+			<p>Mi objetivo es terminar en 3 dias</p>
+		) : (
+			<p>Mi objetivo no son 3 dias</p>
+		)
+	}
+
+	<style define:vars={{skillColor, fontWeight, textCase}}>
+		h1 {
+			color: purple;
+			font-size: 4rem;
+		}
+		.skill {
+			color: var(--skillColor);
+			font-weight: var(--fontWeigth);
+      text-transform: var(--textCase);
+		}
+	</style>
 </Layout>
-
-
-<style>
-  
-</style>
