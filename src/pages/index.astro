@@ -1,8 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro'
+const pageTitle = 'Pagina de inicio'
 ---
 
-<Layout title='Mi blog con astro'>
-	<h1>Home page</h1>
+<Layout title={pageTitle}>
+	<h1>{pageTitle}</h1>
 	<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum modi beatae dolores tenetur repudiandae quia adipisci distinctio accusantium id natus!</p>
 </Layout>

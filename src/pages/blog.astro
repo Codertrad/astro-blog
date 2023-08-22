@@ -1,8 +1,19 @@
 ---
 import Layout from '../layouts/Layout.astro'
+import NavPosts from '../components/NavPosts.astro'
+const pageTitle = 'Mi blog de Astro aprendizaje'
 ---
 
-<Layout title='Pagina de blog'>
-  <h1>Esta es mi pagina de blog</h1>
-  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque accusamus officiis consequuntur cupiditate, laudantium molestias vitae rerum, est numquam quisquam quis culpa eaque alias inventore vel, laboriosam dolor asperiores! Unde deleniti optio quidem neque accusamus? Suscipit cupiditate et voluptatibus, corrupti error ab. Aperiam necessitatibus corrupti eveniet asperiores possimus? Molestias, illum!</p>
+<Layout title={pageTitle}>
+	<h1>{pageTitle}</h1>
+	<p>
+		Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque accusamus
+		officiis consequuntur cupiditate, laudantium molestias vitae rerum, est
+		numquam quisquam quis culpa eaque alias inventore vel, laboriosam dolor
+		asperiores! Unde deleniti optio quidem neque accusamus? Suscipit cupiditate
+		et voluptatibus, corrupti error ab. Aperiam necessitatibus corrupti eveniet
+		asperiores possimus? Molestias, illum!
+	</p>
+
+	<NavPosts/>
 </Layout>
