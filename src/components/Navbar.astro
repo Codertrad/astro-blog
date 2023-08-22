@@ -1,0 +1,38 @@
+---
+const links = [
+  {
+    path: '/',
+    pageName: 'Inicio'
+  },
+  {
+    path: '/about',
+    pageName: 'Acerca de'
+  },
+  {
+    path: '/blog',
+    pageName: 'Blog'
+  }
+]
+---
+
+<ul>
+  {links.map(link => 
+    <li>
+      <a href={link.path}>{link.pageName}</a>
+    </li>)}
+</ul>
+
+<style>
+  ul {
+    list-style: none;
+  }
+
+  ul > li > a{
+    text-decoration: none;
+    color: #1e1e1e;
+    font-weight: bold;
+  }
+  ul> li > a:hover {
+    color: cornflowerblue;
+  }
+</style>
